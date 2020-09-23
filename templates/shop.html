@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="{% static 'style1.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'material_icon.css' %}">
+    <link rel="stylesheet" href="{% static 'font.min.css' %}">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <title>Auto | Lika</title>
+</head>
+<body>
+<nav class="navbar navbar-inverse" style="margin-bottom: 0; ">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{% url 'index' %}">Auto | Lika</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li class="active"><a href="{% url 'shop' %}"> <i class="material-icons">store</i></a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+        </ul>
+    </div>
+</nav>
+<br>
+<div class="container" style=" background-image: url('static/image/blur2.jpg');" ">
+    {% for sub_article in cat %}
+        {% if forloop.first %}
+            <div class="row">{% endif %}
+    <div class="col-sm-3">
+        <div class="col-item">
+            <div class="photo">
+                <img src="{{ sub_article.image.url }}" class="img-responsive" alt="a"/>
+            </div>
+            <div class="info">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>{{ sub_article.name }}</h5>
+                    </div>
+                </div>
+                <div class="separator clear-left">
+                    {#                    <p class="btn-add">#}
+                    {#                            <i class="fa fa-shopping-cart"></i><a href="" class="hidden-sm">Add to cart</a></p>#}
+                    <p class="btn-details">
+                        {% if request.path == '/shop/' %}
+                            <i class="fa fa-list"></i><a href="/shop/{{ sub_article.name|lower }}/" class="hidden-sm">
+                            More details</a></p>
+                        {% else %}
+                            <p>{{ sub_article.price }} ALL</p>
+                            <p>06844566854</p>
+                        {% endif %}
+
+                </div>
+                <div class="clearfix">
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if forloop.counter|divisibleby:4 %}</div>
+        <br>
+        <div class="row">{% endif %}
+    {% if forloop.last %}</div>{% endif %}
+    {% endfor %}
+    <br>
+</div>
+<br>
+<div class="footer">
+    <br>
+    <div class="container" style="padding-bottom: 10px; margin-top: -5px;">
+        <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <p class="copyright-text" style="margin-top: 13px;">Copyright &copy; 2020 All Rights Reserved by
+                    <a href="#">LikaInc</a>.
+                </p>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="col-md-2 col-sm-3 col-xs-6" style="margin-right: 24px;">
+                    <p style="margin-right: -40px; margin-top: 13px;">Contact |</p></div>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li>
+                        <a href="https://api.whatsapp.com/send?phone=355000000001&text=Pershendetje%21">
+                            <i class="fa fa-whatsapp"></i></a></li>
+                    <li><a href="{% url 'contact' %}"><i class="fa fa-envelope"></i></a></li>
+                    <li><a href="{% url 'faq' %}"><i class="fa fa-comments-o"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

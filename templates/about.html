@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="{% static 'style1.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'material_icon.css' %}">
+    <link rel="stylesheet" href="{% static 'font.min.css' %}">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <title>Auto | Lika</title>
+</head>
+<body style="color: white;">
+<nav class="navbar navbar-inverse" style="margin-bottom: 0;">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{% url 'index' %}">Auto | Lika</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'shop' %}"> <i class="material-icons">store</i></a></li>
+            <li class="active"><a href="{% url 'about' %}">About</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <h2 style="color: white; text-align: center;">About Us</h2>
+    <hr>
+    <p style="padding-left: 25px;">It is for our benefit to guarantee you the best service.
+        Therefore personal service is common thing for our company.
+        Contact us by telephone or e-mail and make sure that our team is competent.</p>
+    <br>
+    <h4 style="color: white; text-align: justify; padding-left: 10px; ">Shipping inside Albania:</h4>
+    <br>
+    <p style="padding-left: 25px;">Delivery cost for order below <i style="color: yellowgreen;">ALL 15000.00 is ALL 500.</i>
+        We offer free shipping if the amount of the order exceeds <i style="color: yellowgreen;">ALL 15000.00</i>
+        (except for delivery abroad and special types of shipping – oversized cargo and pledge).</p>
+    <br>
+    <div class="container" style="margin-left: 6%;">
+    <table class="table" style="width: 75%;">
+        <thead class="thead-dark">
+        <tr>
+            <th>City</th>
+            <th>Price ALL</th>
+            <th>Delivery Cost</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Tirana</td>
+            <td> 0 - 50000.00</td>
+            <td> 500</td>
+        </tr>
+        <tr>
+            <td>Tirana</td>
+            <td> 0 - 50000.00</td>
+            <td> 500</td>
+        </tr>
+        <tr>
+            <td>Tirana</td>
+            <td> 0 - 50000.00</td>
+            <td> 500</td>
+        </tr>
+        <tr>
+            <td>Tirana</td>
+            <td> 0 - 50000.00</td>
+            <td> 500</td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+    <br>
+    <h2 style="color: white; text-align: center;">Payment</h2>
+    <br>
+    <h4 style="color: white; text-align: justify; padding-left: 10px; ">Credit Cards:</h4>
+    <p style="padding-left: 25px;">After you chose credit card as payment method, please click on “buy”.
+        After this you will be redirected to a secure page where you can select your credit card type.
+        Finally, you have to enter the correct card information and to confirm the payment.
+        Your card will be charged after your order has been completed.</p>
+</div>
+<br><hr>
+<div class="footer">
+    <br>
+    <div class="container" style="padding-bottom: 10px; margin-top: -5px;">
+        <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <p class="copyright-text" style="margin-top: 13px;">Copyright &copy; 2020 All Rights Reserved by
+                    <a href="#">LikaInc</a>.
+                </p>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="col-md-2 col-sm-3 col-xs-6" style="margin-right: 24px;">
+                    <p style="margin-right: -40px; margin-top: 13px;">Contact |</p></div>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li>
+                        <a href="https://api.whatsapp.com/send?phone=355000000001&text=Pershendetje%21">
+                            <i class="fa fa-whatsapp"></i></a></li>
+                    <li><a href="{% url 'contact' %}"><i class="fa fa-envelope"></i></a></li>
+                    <li><a href="{% url 'faq' %}"><i class="fa fa-comments-o"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

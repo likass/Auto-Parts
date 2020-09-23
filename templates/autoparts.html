@@ -1,0 +1,220 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="{% static 'style1.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'material_icon.css' %}">
+    <link rel="stylesheet" href="{% static 'font.min.css' %}">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/nodal.js' %}"></script>
+    <title>Auto | Lika</title>
+</head>
+<body>
+<script>
+    $(document).ready(function(){
+		$("#myModal").modal('show');
+	});
+</script>
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Auto | Lika</h4>
+            </div>
+            <div class="modal-body">
+                <p>Welcome to our Auto Parts!</p>
+            </div>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-inverse" style="margin-bottom: 0;">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{% url 'index' %}">Auto | Lika</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'shop' %}"> <i class="material-icons">store</i></a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+        </ul>
+    </div>
+</nav>
+<header style="color: black;">
+    <form>
+        <label class="select select1">
+            <select style="width:100%; font-weight: normal;" name="brand_id" class="brand-select">
+                <option value="0">Select Make</option>
+                <optgroup label='TOP BRAND'>
+                    <option style="color:#1C63A4;" value="202">Audi</option>
+                    <option style="color:#1C63A4;" value="213">Ford</option>
+                    <option style="color:#1C63A4;" value="231">Mercedes-Benz</option>
+                    <option style="color:#1C63A4;" value="236">Opel</option>
+                    <option style="color:#1C63A4;" value="250">Volkswagen</option>
+                </optgroup>
+                <optgroup label='GJITHE MARKAT'>
+                    <option value="201">Alfa Romeo</option>
+                    <option value="203">BMW</option>
+                    <option value="204">Chevrolet</option>
+                    <option value="205">Chrysler</option>
+                    <option value="206">Citroen</option>
+                    <option value="207">Dacia</option>
+                    <option value="208">Daewoo</option>
+                    <option value="209">Daihatsu</option>
+                    <option value="210">Dodge</option>
+                    <option value="212">Fiat</option>
+                    <option value="214">Honda</option>
+                    <option value="216">Hyundai</option>
+                    <option value="217">Infiniti</option>
+                    <option value="218">Isuzu</option>
+                    <option value="220">Jaguar</option>
+                    <option value="221">Jeep</option>
+                    <option value="222">Kia</option>
+                    <option value="223">Lada</option>
+                    <option value="224">Lamborghini</option>
+                    <option value="225">Lancia</option>
+                    <option value="226">Land Rover</option>
+                    <option value="227">Lexus</option>
+                    <option value="228">Lotus</option>
+                    <option value="230">Mazda</option>
+                    <option value="233">Mini</option>
+                    <option value="234">Mitsubishi</option>
+                    <option value="235">Nissan</option>
+                    <option value="237">Peugeot</option>
+                    <option value="238">Porsche</option>
+                    <option value="239">Renault</option>
+                    <option value="240">Rover</option>
+                    <option value="241">Saab</option>
+                    <option value="242">Seat</option>
+                    <option value="243">Skoda</option>
+                    <option value="244">Smart</option>
+                    <option value="245">SsangYong</option>
+                    <option value="246">Subaru</option>
+                    <option value="247">Suzuki</option>
+                    <option value="248">Toyota</option>
+                    <option value="249">Volvo</option>
+                </optgroup>
+            </select>
+        </label>
+        <label for="model"></label>
+        <select id="model" name="model">
+            <option value="au">Select Model</option>
+            <option value="ca">Canada</option>
+            <option value="usa">USA</option>
+        </select>
+        <label for="engine"></label>
+        <select id="engine" name="engine">
+            <option value="au">Select Engine</option>
+            <option value="ca">Canada</option>
+            <option value="usa">USA</option>
+        </select>
+        <a href="#">
+            <div class="btn">Search</div>
+        </a>
+    </form>
+</header>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+        <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img class="first-slide" src="{% static 'image/5.jpg' %}" alt="1"
+                 style="width: 100%; height: 500px;">
+        </div>
+        <div class="item">
+            <img class="second-slide" src="{% static 'image/0.jpg' %}" alt="2"
+                 style="width: 100%; height: 500px;">
+        </div>
+        <div class="item">
+            <img class="third-slide" src="{% static 'image/service4.jpg' %}" alt="3"
+                 style="width: 100%; height: 500px;">
+        </div>
+    </div>
+</div>
+<div class="row" style="width: 100%; margin-left: 0;">
+    <div class="col-md-4">
+        <img src="{% static 'image/a.png' %}" alt="image" style="height: 50px; width:50px;">
+    </div>
+    <div class="col-md-4">
+        <img src="{% static 'image/be.png' %}" alt=" img" style="height: 50px; width:50px;">
+    </div>
+    <div class="col-md-4">
+        <img src="{% static 'image/ce.jpeg' %}" alt="img" style="height: 50px; width:50px;">
+    </div>
+    <div class="col-md-4">
+        <img src="{% static 'image/f.png' %}" alt="img" style="height: 50px; width:50px;">
+    </div>
+    <div class="col-md-4">
+        <img src="{% static 'image/h.png' %}" alt=" img" style="height: 50px; width:50px;">
+    </div>
+    <div class="col-md-4">
+        <img src="{% static 'image/s.png' %}" alt="img" style="height: 50px; width:50px;">
+    </div>
+    <div class="col-md-4">
+
+        <img src="{% static 'image/le.jpg' %}" alt="img" style="height: 50px; width:50px;">
+    </div>
+    <div class="col-md-4">
+        <img src="{% static 'image/m.png' %}" alt="img" style="height: 50px; width:50px;">
+    </div>
+    <div class="col-md-4">
+        <img src="{% static 'image/t.png' %}" alt="img" style="height: 50px; width:50px;">
+    </div>
+    <div class="col-md-4">
+        <img src="{% static 'image/d.png' %}" alt="img" style="height: 50px; width:50px;">
+    </div>
+    <div class="col-md-4">
+        <img src="{% static 'image/g.jpg' %}" alt="img" style="height: 50px; width:50px;">
+    </div>
+    <div class="col-md-4">
+        <img src="{% static 'image/h.jpg' %}" alt="img" style="height: 50px; width:50px;">
+    </div>
+    <div class="col-md-4">
+        <img src="{% static 'image/i.jpg' %}" alt="img" style="height: 50px; width:50px;">
+    </div>
+    <div class="col-md-4">
+        <img src="{% static 'image/k.jpg' %}" alt="img" style="height: 50px; width:50px;">
+    </div>
+    <div class="col-md-4">
+        <img src="{% static 'image/l.jpg' %}" alt="img" style="height: 50px; width:50px;">
+    </div>
+</div>
+<br>
+<hr>
+<div class="footer">
+    <br>
+    <div class="container" style="padding-bottom: 10px; margin-top: -5px;">
+        <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <p class="copyright-text" style="margin-top: 13px;">Copyright &copy; 2020 All Rights Reserved by
+                    <a href="#">LikaInc</a>.
+                </p>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="col-md-2 col-sm-3 col-xs-6" style="margin-right: 24px;">
+                    <p style="margin-right: -40px; margin-top: 13px;">Contact |</p></div>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li>
+                        <a href="https://api.whatsapp.com/send?phone=355000000001&text=Pershendetje%21">
+                            <i class="fa fa-whatsapp"></i></a></li>
+                    <li><a href="{% url 'contact' %}"><i class="fa fa-envelope"></i></a></li>
+                    <li><a href="{% url 'faq' %}"><i class="fa fa-comments-o"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
